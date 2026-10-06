@@ -2,7 +2,7 @@
 #include <iostream>
 // function template prototype
 template <typename T>  // or class T
-void Swap(T &a, T &b);
+void Swap(T &a, T &b);//函数模板,会自动根据实际参数确定函数类型
 
 int main()
 {
@@ -25,11 +25,11 @@ int main()
     return 0;
 }
 
-// function template definition
-template <typename T>  // or class T
+//函数模板在下方定义
+template <typename T>  // =<class T>
 void Swap(T &a, T &b)
 {
-    T temp;   // temp a variable of type T
+    T temp;   //T会在传参时被替换为变量类型,从而快速创造出新模板
     temp = a;
     a = b;
     b = temp;
