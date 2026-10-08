@@ -32,5 +32,5 @@ void Swap(T &a, T &b)
     T temp;   //T会在传参时被替换为变量类型,从而快速创造出新模板
     temp = a;
     a = b;
-    b = temp;
+    b = temp;//a,b替换
 }
