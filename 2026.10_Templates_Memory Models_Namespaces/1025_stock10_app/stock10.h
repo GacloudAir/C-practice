@@ -1,6 +1,6 @@
 // stock10.h -- Stock class declaration with constructors, destructor added
 #ifndef STOCK10_H_
-#define STOCK01_H_
+#define STOCK10_H_
 #include <string>
 
 class Stock
