@@ -42,7 +42,7 @@ namespace VECTOR
     }
 
     // public methods
-    Vector::Vector()             // default constructor
+    Vector::Vector()             //默认构造函数
     {
         x = y = mag = ang = 0.0;
         mode = RECT;
