@@ -1,3 +1,4 @@
+//main.cpp -- AI提供的临时调用代码,用于学习运算符重载的有关内容
 #include <iostream>
 #include "vect.h"
 #include <cstdlib>

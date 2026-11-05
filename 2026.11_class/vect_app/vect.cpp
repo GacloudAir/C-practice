@@ -121,25 +121,26 @@ namespace VECTOR
 
     // operator overloading
     // add two Vectors
-    Vector Vector::operator+(const Vector & b) const//直接计算成对x,y的加和,然后导入到Vector函数中,配合上述的不同输入→同输出设计,可以在任何输入条件下完美更新值
+    Vector Vector::operator+(const Vector & b) const//直接计算成对x,y的加和,然后导入到Vector构造函数,
+    //配合上述的不同输入→同输出设计,可以在任何输入条件下输出一个完美的可读对象
     {
         return Vector(x + b.x, y + b.y);
     }
 
     // subtract Vector b from a
-    Vector Vector::operator-(const Vector & b) const
+    Vector Vector::operator-(const Vector & b) const//重载时裸写的成员变量会被加上this指针,即调用者的成员变量
     {
         return Vector(x - b.x, y - b.y);
     }
 
     // reverse sign of Vector
-    Vector Vector::operator-() const
+    Vector Vector::operator-() const//负号的一元运算符重载,使用时右端将会被this指针传入(二元运算符左端为调用者,一元时那一个对象就是调用者)
     {
         return Vector(-x, -y);
     }
 
     // multiply vector by n
-    Vector Vector::operator*(double n) const
+    Vector Vector::operator*(double n) const//虽然所有加减乘除运算符都有二元版本,但其只需要一个参数,另一个参数是隐藏的this指针,直接指向调用者(左端)
     {
         return Vector(n * x, n * y);
     }
