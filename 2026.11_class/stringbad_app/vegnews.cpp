@@ -23,11 +23,11 @@ int main()
         callme2(headline2);
         cout << "headline2: " << headline2 << endl;
         cout << "Initialize one object to another:\n";
-        StringBad sailor = sports;//发生浅拷贝,指针指向相同位置,指针指向的内存被释放,但指针仍然指向对应位置
+        StringBad sailor = sports;//初始化函数,＝(sailor.str＝sports.str)发生浅拷贝(传递地址),指针指向相同位置,内存被释放后,指针仍然指向对应位置
         cout << "sailor: " << sailor << endl;//*2双重释放,导致崩溃
         cout << "Assign one object to another:\n";
         StringBad knot;//创建时,申请了一块内存,指针指向该位置,num_strings++
-        knot = headline1;//发生浅拷贝,指针不仅指向与headline1相同的位置,而且原来申请的内存被丢失,即内存泄漏
+        knot = headline1;//二者均被初始化,因此触发赋值函数.发生浅拷贝,指针不仅指向与headline1相同的位置,而且原来申请的内存被丢失,即内存泄漏
         cout << "knot: " << knot << endl;
         cout << "Exiting the block.\n";
     }

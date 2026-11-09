@@ -8,7 +8,7 @@ int StringBad::num_strings = 0;
 
 // class methods
 // construct StringBad from C string
-StringBad::StringBad(const char * s)
+StringBad::StringBad(const char * s)//输入的是一个指针,因此str指向的是指针内地址
 {
     len = std::strlen(s);          // set size
     str = new char[len + 1];       // allot storage
