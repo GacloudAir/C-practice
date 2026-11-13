@@ -36,6 +36,7 @@ int main()
 
     JustTesting *pc3, *pc4;
     pc3 = new (buffer) JustTesting("Bad Idea", 6); //创建的对象指向pc1的内存,pc1被覆盖,形成野指针
+                                                   //正常使用时应该以pc1的大小进行偏移
     pc4 = new JustTesting("Heap2", 10);
 
     cout << "Memory contents:\n";
