@@ -12,7 +12,7 @@ private:
     string firstname;
     string lastname;
     bool hasTable;
-public://使用了string类,自动管理内存方便快捷
+public://使用了string类,自动管理内存方便快捷,而且可以接受C风格字符串
     TableTennisPlayer (const string & fn = "none",
                        const string & ln = "none", bool ht = false);
     void Name() const;
