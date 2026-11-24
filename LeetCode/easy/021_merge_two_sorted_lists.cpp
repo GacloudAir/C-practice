@@ -10,7 +10,8 @@ struct ListNode {
  };
 class Solution {
 public:
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {//本题需要理解头尾指针的作用:头指针给予新链表的锚点,
+        //尾指针为新的节点落脚
         ListNode* dummy = new ListNode(0);
         ListNode* tail = dummy;
         while (list1 != nullptr && list2 != nullptr)
@@ -28,9 +29,9 @@ public:
                 list1 = list1 -> next;
             }
         }
-        if (list1 != nullptr) tail -> next = list1;
+        if (list1 != nullptr) tail -> next = list1;//只要一个链表的节点接完了,就把另一个链表的剩余节点(已知原链表已排列)
         else tail ->next = list2;
-        return dummy->next;
+        return dummy->next;//这便是新链表的地址(链表的单向性,前面加什么都无所谓,只要给出后面的节点,表现上和没有前节点一致)
     }
 };
 
